@@ -1,17 +1,21 @@
+// VRPerimetriApp.swift
+// VR-Perimetri — iPhone + Google Cardboard Visual Field Test
 //
-//  VRPerimetriApp.swift
-//  VRPerimetri
-//
-//  Created by Ata Baytaroglu on 26.03.2026.
-//
+// Ana uygulama giriş noktası (SwiftUI App lifecycle)
 
 import SwiftUI
 
 @main
 struct VRPerimetriApp: App {
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PerimetryWebView()
+                .ignoresSafeArea(.all)
+                .preferredColorScheme(.dark)
+                .persistentSystemOverlays(.hidden)
         }
     }
 }
